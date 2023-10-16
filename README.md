@@ -16,16 +16,16 @@ This Hangman game was developed using Python and Visual Studio Code, making it a
 1. Clone this repository to your local machine using the following command:
    <pre>git clone https://github.com/lakmalfdo/hangman_python.git</pre>
 2. Make sure you have Python installed on your computer.
-3. Open your terminal and navigate to the project directory:<br>
-   cd hangman_python
-4. Start the game by running:<br>
-   python hangman_python.py
+3. Open your terminal and navigate to the project directory:
+   <pre>cd hangman_python</pre>
+4. Start the game by running:
+   <pre>python hangman_python.py</pre>
 5. Follow the on-screen instructions to guess the hidden word. Try to solve it before the hangman's figure is complete.
 
 ## How to Modify
 
-1. Clone this repository to your local machine:<br>
-   git clone https://github.com/lakmalfdo/hangman_python.git
+1. Clone this repository to your local machine:
+   <pre>git clone https://github.com/lakmalfdo/hangman_python.git</pre>
 2. Open the project in your favorite code editor, such as Visual Studio Code.
 3. Modify the game to your liking and challenge yourself with new features or word lists.
 
