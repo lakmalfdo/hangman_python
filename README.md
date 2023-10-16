@@ -8,9 +8,9 @@ Hangman is a word-guessing game where you'll need to use your wits to uncover a 
 This Hangman game was developed using Python and Visual Studio Code, making it a great project for Python enthusiasts.
 
 ## Main Features
-- ASCII Artwork: Enjoy a visually pleasing game experience with ASCII art depicting the hangman figure.
-- Random Word Selection: Challenge yourself with a random word selected from a list of intriguing words.
-- Endless Gameplay: After each game, you have the option to play again and improve your word-guessing skills.
+- **ASCII Artwork**: Enjoy a visually pleasing game experience with ASCII art depicting the hangman figure.
+- **Random Word Selection**: Challenge yourself with a random word selected from a list of intriguing words.
+- **Endless Gameplay**: After each game, you have the option to play again and improve your word-guessing skills.
 
 ## How to Play
 1. Clone this repository to your local machine using the following command:
