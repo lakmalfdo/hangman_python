@@ -23,9 +23,8 @@ import random
 # List of words for the Hangman game
 word_list = ["elephant", "lion", "tiger", "giraffe", "zebra", "kangaroo", "penguin", "dolphin", "rhinoceros", "octopus", "cheetah", "koala", "hedgehog", "crocodile", "seagull", "panda", "otter", "polarbear", "platypus", "chimpanzee"]
 
-# Function to display the hangman stage in ASCII art
-def display_hangman_stage():
-    hangman_stages = [
+# List of  hangman stage in ASCII art
+hangman_stages = [
 """
 ________    
 |    |    
@@ -88,17 +87,13 @@ ________
 |   / \\  
 |         
 =========
-"""
-    ]
+"""]
+
+# Function to display the hangman stage in ASCII art
+def display_hangman_stage():
     print(hangman_stages[attempts])
 
-# Select a random word from the list
-word = random.choice(word_list)
-
-# Create a list to store the guessed letters
-guessed_letters = []
-
-# Function to display the current state of the word
+# Function to get the current answer
 def get_answer():
     answer = ""
     for letter in word:
@@ -108,8 +103,18 @@ def get_answer():
             answer += "_"
     return answer
 
+# Function to display the current answer
+def display_answer():
+    print(get_answer())
+
 # Maximum number of incorrect guesses allowed
 max_attempts = 6
+
+# Select a random word from the list
+word = random.choice(word_list)
+
+# Create a list to store the guessed letters
+guessed_letters = []
 
 attempts = 0
 
@@ -125,11 +130,12 @@ print("                     |___/")
 print()
 print("Guess the Animal")
 
-# Main game loop
+# Main loop: Handles the core gameplay until game over or player quits.
 while True:
     display_hangman_stage()
-    print(get_answer())
+    display_answer()
 
+    # Game loop: Iterates through game stages until game is over.
     while True:
         guess = input("Guess a letter: ").lower()
 
@@ -147,7 +153,7 @@ while True:
             attempts += 1
 
         display_hangman_stage()
-        print(get_answer())
+        display_answer()
 
         if get_answer() == word:
             print("Congratulations, you've won!")
@@ -157,6 +163,7 @@ while True:
             print("Game Over. The word was:", word)
             break
 
+    # Select play again loop: Allows player to choose whether to play the game again.
     while True:
         play_again = input("Do you want to play again? (y/n): ").strip().lower()
 
