@@ -13,18 +13,18 @@ This Hangman game was developed using Python and Visual Studio Code, making it a
 - **Endless Gameplay**: After each game, you have the option to play again and improve your word-guessing skills.
 
 ## How to Play
-1. Clone this repository to your local machine using the following command:
+1. Clone this repository to your local machine using the following command:<br />
    git clone https://github.com/lakmalfdo/hangman_python.git
 2. Make sure you have Python installed on your computer.
-3. Open your terminal and navigate to the project directory:
+3. Open your terminal and navigate to the project directory:<br />
    cd hangman_python
-4. Start the game by running:
+4. Start the game by running:<br />
    python hangman_python.py
 5. Follow the on-screen instructions to guess the hidden word. Try to solve it before the hangman's figure is complete.
 
 ## How to Modify
 
-1. Clone this repository to your local machine:
+1. Clone this repository to your local machine:<br />
    git clone https://github.com/lakmalfdo/hangman_python.git
 2. Open the project in your favorite code editor, such as Visual Studio Code.
 3. Modify the game to your liking and challenge yourself with new features or word lists.
