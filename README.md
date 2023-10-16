@@ -13,8 +13,8 @@ This Hangman game was developed using Python and Visual Studio Code, making it a
 - **Endless Gameplay**: After each game, you have the option to play again and improve your word-guessing skills.
 
 ## How to Play
-1. Clone this repository to your local machine using the following command:<br>
-   git clone https://github.com/lakmalfdo/hangman_python.git
+1. Clone this repository to your local machine using the following command:
+   <pre>git clone https://github.com/lakmalfdo/hangman_python.git</pre>
 2. Make sure you have Python installed on your computer.
 3. Open your terminal and navigate to the project directory:<br>
    cd hangman_python
