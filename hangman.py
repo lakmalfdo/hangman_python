@@ -98,66 +98,69 @@ guessed_letters = []
 
 attempts = 0
 
-# Display Hangman game name in ASCII art
-print("  _    _")
-print(" | |  | |")
-print(" | |__| | __ _ _ __   __ _ _ __ ___   __ _ _ __")
-print(" |  __  |/ _` | '_ \\ / _` | '_ ` _ \\ / _` | '_ \\")
-print(" | |  | | (_| | | | | (_| | | | | | | (_| | | | |")
-print(" |_|  |_|\\__,_|_| |_|\\__, |_| |_| |_|\\__,_|_| |_|")
-print("                      __/ /")
-print("                     |___/")
-print()
-print("Guess the Animal")
+def main():
+    # Display Hangman game name in ASCII art
+    print("  _    _")
+    print(" | |  | |")
+    print(" | |__| | __ _ _ __   __ _ _ __ ___   __ _ _ __")
+    print(" |  __  |/ _` | '_ \\ / _` | '_ ` _ \\ / _` | '_ \\")
+    print(" | |  | | (_| | | | | (_| | | | | | | (_| | | | |")
+    print(" |_|  |_|\\__,_|_| |_|\\__, |_| |_| |_|\\__,_|_| |_|")
+    print("                      __/ /")
+    print("                     |___/")
+    print()
+    print("Guess the Animal")
 
-# Main loop: Handles the core gameplay until game over or player quits.
-while True:
-    display_hangman_stage()
-    display_answer()
-
-    # Game loop: Iterates through game stages until game is over.
+    # Main loop: Handles the core gameplay until game over or player quits.
     while True:
-        guess = input("Guess a letter: ").lower()
-
-        if len(guess) != 1 or not guess.isalpha():
-            print("Please enter a single letter.")
-            continue
-
-        if guess in guessed_letters:
-            print("You've already guessed that letter.")
-            continue
-
-        guessed_letters.append(guess)
-
-        if guess not in word:
-            attempts += 1
-
         display_hangman_stage()
         display_answer()
 
-        if get_answer() == word:
-            print("Congratulations, you've won!")
-            break
+        # Game loop: Iterates through game stages until game is over.
+        while True:
+            guess = input("Guess a letter: ").lower()
 
-        if attempts >= max_attempts:
-            print("Game Over. The word was:", word)
-            break
+            if len(guess) != 1 or not guess.isalpha():
+                print("Please enter a single letter.")
+                continue
 
-    # Select play again loop: Allows player to choose whether to play the game again.
-    while True:
-        play_again = input("Do you want to play again? (y/n): ").strip().lower()
+            if guess in guessed_letters:
+                print("You've already guessed that letter.")
+                continue
 
-        if play_again in ("y", "yes"):
-            # Select a new random word from the list
-            word = random.choice(word_list)
-            # Clear guessed letters from previous game
-            guessed_letters.clear()
-            attempts = 0
-            break
-        elif play_again in ("n", "no"):
-            print("Thank you for playing Hangman. Goodbye!")
-            exit()
-        else:
-            print("Invalid input. Please enter 'y' or 'n'.")
-            continue
+            guessed_letters.append(guess)
 
+            if guess not in word:
+                attempts += 1
+
+            display_hangman_stage()
+            display_answer()
+
+            if get_answer() == word:
+                print("Congratulations, you've won!")
+                break
+
+            if attempts >= max_attempts:
+                print("Game Over. The word was:", word)
+                break
+
+        # Select play again loop: Allows player to choose whether to play the game again.
+        while True:
+            play_again = input("Do you want to play again? (y/n): ").strip().lower()
+
+            if play_again in ("y", "yes"):
+                # Select a new random word from the list
+                word = random.choice(word_list)
+                # Clear guessed letters from previous game
+                guessed_letters.clear()
+                attempts = 0
+                break
+            elif play_again in ("n", "no"):
+                print("Thank you for playing Hangman. Goodbye!")
+                exit()
+            else:
+                print("Invalid input. Please enter 'y' or 'n'.")
+                continue
+
+if __name__ == '__main__':
+    main()
